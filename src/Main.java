@@ -10,6 +10,7 @@ public class Main {
 		
 		final int ITERATIONLIMIT = 250;
 		boolean gameOver = false;
+		int maxCount = rows * columns;
 		
 		Life life = new Life(rows, columns, creaturesAtStart, deathTreshold, divisionTreshold);
 
@@ -24,7 +25,7 @@ public class Main {
 			
 			iterations++;
 			
-			if (life.getCount() < 1 || life.getCount() == life.getMaxCount()
+			if (life.getCount() < 1 || life.getCount() == maxCount
 					|| iterations == ITERATIONLIMIT) {
 				gameOver = true;
 			}
