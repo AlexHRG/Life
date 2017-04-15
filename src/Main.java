@@ -4,7 +4,7 @@ public class Main {
 	public static void main(String[] args) {
 		int rows = 5;
 		int columns = 10;
-		int creaturesAtStart = 20;
+		int creaturesAtStart = 33;
 		int deathTreshold = 2;
 		int divisionTreshold = 4;
 		
@@ -33,7 +33,15 @@ public class Main {
 		System.out.println("Result map:");
 		life.printMap();
 
-		System.out.println(System.lineSeparator() + "Creatures: " + life.getCount() + ", iterations: " + iterations);
+		String result = life.getCount() == 0
+				? "All are dead :(" : life.getCount() == (rows*columns)
+				? "Maximum creatures :)" : "Life goes on";
+
+		System.out.println(System.lineSeparator()
+				+ "Creatures: " + life.getCount()
+				+ ", iterations: " + iterations
+				+ System.lineSeparator()
+				+ result);
 	}
 
 }
