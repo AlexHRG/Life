@@ -2,8 +2,8 @@ import java.util.Random;
 
 public class Life {
 
-	int[][] playMap;
-	int rows, columns, deathTreshold, divisionTreshold, creaturesCounter;
+	private int[][] playMap;
+	private int rows, columns, deathTreshold, divisionTreshold, creaturesCounter;
 	
 	final static int FREECELL = 0;
 	final static int CREATURE = 1;
