@@ -10,12 +10,14 @@ public class Life {
 	final static int DYING = 2;
 	final static int BORNING = 3;
 	
-	public Life(int rows, int columns){
+	public Life(int rows, int columns, int creatures, int deathTreshold, int divisionTreshold){
 		this.rows = rows;
 		this.columns = columns;
 		playMap = new int[rows][columns];
-		deathTreshold = 2;
-		divisionTreshold = 4;
+		this.deathTreshold = deathTreshold;
+		this.divisionTreshold = divisionTreshold;
+
+		setLife(creatures);
 	}
 	
 	
