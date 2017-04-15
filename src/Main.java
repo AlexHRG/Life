@@ -10,19 +10,20 @@ public class Main {
 		System.out.println("Initial map:");
 		life.printMap();
 		
-		int counter = 0;
+		int iterations = 0;
 		
 		while (!gameOver) {
 			life.performDay();
 			life.performNight();
 			
-			counter++;
+			iterations++;
 			
-			if (life.getCount() < 1 || life.getCount() == life.getMaxCount()) {
+			if (life.getCount() < 1 || life.getCount() == life.getMaxCount()
+					|| iterations == 100) {
 				gameOver = true;
 			}
 		}
-		System.out.println("Creatures: " + life.getCount() + ", iterations: " + counter);
+		System.out.println("Creatures: " + life.getCount() + ", iterations: " + iterations);
 	}
 
 }

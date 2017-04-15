@@ -14,8 +14,8 @@ public class Life {
 		this.rows = rows;
 		this.columns = columns;
 		playMap = new int[rows][columns];
-		deathTreshold = 3;
-		divisionTreshold = 6;
+		deathTreshold = 2;
+		divisionTreshold = 4;
 	}
 	
 	
@@ -60,9 +60,9 @@ public class Life {
 			for (int j=0; j<columns; j++){
 				neighbours = countNeighbours(i, j);
 				
-				if (playMap[i][j] == FREECELL && neighbours > 2) {
+				if (playMap[i][j] == FREECELL && neighbours >= divisionTreshold) {
 					playMap[i][j] = BORNING;
-				} else if (playMap[i][j] == CREATURE && neighbours < 2){
+				} else if (playMap[i][j] == CREATURE && neighbours <= deathTreshold){
 					playMap[i][j] = DYING;
 				}
 			}
