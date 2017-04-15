@@ -1,3 +1,4 @@
+import java.util.Random;
 
 public class Life {
 
@@ -23,6 +24,21 @@ public class Life {
 				System.out.print(this.playMap[i][j] + "  ");
 			}
 			System.out.println(System.lineSeparator());
+		}
+	}
+	
+	public void setLife(int quantity){
+		int creaturesCounter = 0;
+		int randomRow, randomColumn;
+		
+		while (creaturesCounter < quantity) {
+			randomRow = new Random().nextInt(rows);
+			randomColumn = new Random().nextInt(columns);
+			
+			if (playMap[randomRow][randomColumn] != CREATURE) {
+				playMap[randomRow][randomColumn] = CREATURE;
+				creaturesCounter += 1;
+			}
 		}
 	}
 }
