@@ -16,8 +16,8 @@ public class Life {
 		playMap = new int[rows][columns];
 		this.deathTreshold = deathTreshold;
 		this.divisionTreshold = divisionTreshold;
-
 		setLife(creatures);
+		creaturesCounter = creatures;
 	}
 	
 	
@@ -47,8 +47,6 @@ public class Life {
 				counter += 1;
 			}
 		}
-		
-		this.creaturesCounter = quantity;
 	}
 	
 	public void performDay(){

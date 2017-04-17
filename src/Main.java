@@ -8,7 +8,7 @@ public class Main {
 		int deathTreshold = 2;
 		int divisionTreshold = 4;
 		
-		final int ITERATIONLIMIT = 250;
+		final int ITERATIONLIMIT = 1000;
 		boolean gameOver = false;
 		int maxCount = rows * columns;
 		
